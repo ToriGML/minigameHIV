@@ -44,6 +44,16 @@
 
     <script>
 
+        const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
+        
+        const cores = (correctColor) => {
+          var cor = correctColor
+          for(;cor == correctColor;){
+            cor = colors[Math.floor(Math.random() * colors.length)]
+          }
+          return cor
+        }
+
         document.getElementById("fase01").addEventListener("targetFound", (e) =>{
             document.getElementById("container").innerHTML = randomHTML()
         })
@@ -74,8 +84,6 @@
         document.getElementById("fase10").addEventListener("targetFound", (e) =>{
             alert("Olá")
         })
-
-        const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
       
         const randomHTML = () => {
           const correctColor = colors[Math.floor(Math.random() * colors.length)]
@@ -105,14 +113,6 @@
             </div>
           `
           return html
-        }
-
-        const cores = (correctColor) => {
-          var cor = correctColor
-          for(;cor == correctColor;){
-            cor = colors[Math.floor(Math.random() * colors.length)]
-          }
-          return cor
         }
 
     </script>
