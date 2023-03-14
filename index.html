@@ -38,7 +38,7 @@
       </a-entity>
     </a-scene>
 
-    <div id="container" style="position: absolute; width: 100vw; height: 100vh;">
+    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: black;">
 
     </div>
 
@@ -78,7 +78,7 @@
         const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
       
         const randomHTML = () => {
-          const correctColor = Math.floor(Math.random() * colors.length)
+          const correctColor = colors[Math.floor(Math.random() * colors.length)]
           const cor1 = cores(correctColor)
           const cor2 = cores(correctColor)
           const cor3 = cores(correctColor)
@@ -110,7 +110,7 @@
         const cores = (correctColor) => {
           var cor = correctColor
           for(;cor == correctColor;){
-            cor = Math.floor(Math.random() * colors.length)
+            cor = colors[Math.floor(Math.random() * colors.length)]
           }
           return cor
         }
