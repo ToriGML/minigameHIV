@@ -17,6 +17,7 @@
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0" id="fase01">
+        <a-text onload="randomHTML()"></a-text>
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 1" id="fase02">
       </a-entity>
@@ -69,6 +70,47 @@
         document.getElementById("fase10").addEventListener("targetFound", (e) =>{
             alert("Olá")
         })
+
+        const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
+      
+        const randomHTML = () => {
+          const correctColor = Math.floor(Math.random() * colors.length)
+          const cor1 = cores(correctColor)
+          const cor2 = cores(correctColor)
+          const cor3 = cores(correctColor)
+          const cor4 = cores(correctColor)
+          const nome1 = cores(correctColor)
+          const nome2 = cores(correctColor)
+          const nome3 = cores(correctColor)
+          const nome4 = cores(correctColor)
+          let html = `
+            <div>
+                <h1 style="color: ${cor4};">${correctColor.toUpperCase()}</h1>
+                <div>
+                    <h1 style="color: ${cor1};">${nome1.toUpperCase()}</h1>
+                </div>
+                <div>
+                    <h1 style="color: ${correctColor};">${nome2.toUpperCase()}</h1>
+                </div>
+                <div>
+                    <h1 style="color: ${cor2};">${nome3.toUpperCase()}</h1>
+                </div>
+                <div>
+                    <h1 style="color: ${cor3};">${nome4.toUpperCase()}</h1>
+                </div>
+            </div>
+          `
+          return html
+        }
+
+        const cores = (correctColor) => {
+          var cor = correctColor
+          for(;cor == correctColor;){
+            cor = Math.floor(Math.random() * colors.length)
+          }
+          return cor
+        }
+
     </script>
 </body>
 </html>
