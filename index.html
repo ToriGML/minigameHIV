@@ -50,17 +50,17 @@
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
         const cores = (correctColor) => {
-            const colorSet = new Set([correctColor]);
+            let colorsArr = [];
 
-            while (colorSet.size < 4) {
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                if (randomColor !== correctColor) {
-                    colorSet.add(randomColor);
+            while (colorsArr.length < 4) {
+                let randomColor = colors[Math.floor(Math.random() * colors.length)];
+                if (!colorsArr.includes(randomColor) && randomColor != correctColor) {
+                    colorsArr.push(randomColor);
                 }
             }
 
-            return Array.from(colorSet);
-        }
+            return colorsArr;
+        };
 
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
