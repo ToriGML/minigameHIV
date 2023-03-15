@@ -13,7 +13,6 @@
       <a-assets>
         
       </a-assets>
-      </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0" id="fase01">
@@ -36,16 +35,15 @@
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 9" id="fase10">
       </a-entity>
+      <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
+
+      </div>
     </a-scene>
-
-    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: black;">
-
-    </div>
 
     <script>
 
         const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
-        
+
         const cores = (correctColor) => {
           var cor = correctColor
           for(;cor == correctColor;){
