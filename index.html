@@ -102,26 +102,35 @@
             <div>
                 <h1 style="color: ${cor4};">${correctColor}</h1>
                 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-                <div>
+                <div onclick="resposta(e, correctColor)">
                     <h1 style="background-color: ${aaa[0]};">${nome1}</h1>
                 </div>
-                <div>
+                <div onclick="resposta(e, correctColor)">
                     <h1 style="background-color: ${aaa[1]};">${nome2}</h1>
                 </div>
-                <div>
+                <div onclick="resposta(e, correctColor)">
                     <h1 style="background-color: ${aaa[2]};">${nome3}</h1>
                 </div>
-                <div>
+                <div onclick="resposta(e, correctColor)">
                     <h1 style="background-color: ${aaa[3]};">${nome4}</h1>
                 </div>
                 </div>
             </div>
           `
             return html
-        } 
-          // Separar em um css
-          // Deixar bonito
-          // ** Lógica de jogo
+        }
+        // Separar em um css
+        // Deixar bonito
+        // ** Lógica de jogo
+
+        const resposta = (e, correctColor) => {
+            const h1 = e.querySelector('h1');
+            if (h1.textContent === correctColor) {
+                alert("Ganhou")
+            } else {
+                alert("Game Over | Loser")
+            }
+        }
 
     </script>
 </body>
