@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,92 +9,95 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <a-scene mindar-image="imageTargetSrc: ./pingu.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-assets>
-        
-      </a-assets>
+    <a-scene mindar-image="imageTargetSrc: ./pingu.mind" color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-assets>
 
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0" id="fase01">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 1" id="fase02">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 2" id="fase03">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 3" id="fase04">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 4" id="fase05">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 5" id="fase06">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 6" id="fase07">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 7" id="fase08">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 8" id="fase09">
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 9" id="fase10">
-      </a-entity>
-      <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
+        </a-assets>
 
-      </div>
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-entity mindar-image-target="targetIndex: 0" id="fase01">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 1" id="fase02">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 2" id="fase03">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 3" id="fase04">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 4" id="fase05">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 5" id="fase06">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 6" id="fase07">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 7" id="fase08">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 8" id="fase09">
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 9" id="fase10">
+        </a-entity>
+        <div id="container"
+            style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
+
+        </div>
     </a-scene>
 
     <script>
 
-        const colors = ["red", "green", "blue", "yellow", "purple", "orange", "black", "white"]
+        const coresDisponiveis = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
-        const cores = (correctColor) => {
-          var cor = correctColor
-          for(;cor == correctColor;){
-            cor = colors[Math.floor(Math.random() * colors.length)]
-          }
-          return cor
+        const cores = (coresSelecionadas) => {
+            let cores = [];
+
+            while (cores.length < 4) {
+                const cor = coresDisponiveis[Math.floor(Math.random() * coresDisponiveis.length)];
+                if (!cores.includes(cor)) {
+                    cores.push(cor);
+                }
+            }
+
+            return cores;
         }
 
-        document.getElementById("fase01").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
         })
-        document.getElementById("fase02").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase02").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase03").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase03").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase04").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase04").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase05").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase05").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase06").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase06").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase07").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase07").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase08").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase08").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase09").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase09").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-        document.getElementById("fase10").addEventListener("targetFound", (e) =>{
+        document.getElementById("fase10").addEventListener("targetFound", (e) => {
             alert("Olá")
         })
-      
+
         const randomHTML = () => {
-          const correctColor = colors[Math.floor(Math.random() * colors.length)]
-          const cor1 = cores(correctColor)
-          const cor2 = cores(correctColor)
-          const cor3 = cores(correctColor)
-          const cor4 = cores(correctColor)
-          const nome1 = cores(correctColor)
-          const nome2 = cores(correctColor)
-          const nome3 = cores(correctColor)
-          const nome4 = cores(correctColor)
-          let html = `
+            const correctColor = coresDisponiveis[Math.floor(Math.random() * coresDisponiveis.length)]
+            const [cor1, cor2, cor3, cor4] = cores(correctColor)
+            const [nome1, nome2, nome3, nome4] = cores(correctColor)
+            let html = `
             <div>
                 <h1 style="color: ${cor4};">${correctColor}</h1>
                 <div style="display: flex; justify-content: center; align-items: center;">
@@ -112,9 +116,13 @@
                 </div>
             </div>
           `
-          return html
-        }
+            return html
+        } // ** Verificar se não repete cor
+          // Separar em um css
+          // Deixar bonito
+          // ** Lógica de jogo
 
     </script>
 </body>
+
 </html>
