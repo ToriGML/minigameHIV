@@ -47,20 +47,21 @@
 
     <script>
 
-        const coresDisponiveis = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
+        const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
-        const cores = (coresSelecionadas) => {
-            let cores = [];
+        const cores = (correctColor) => {
+            let colorsArr = [];
+            colorsArr.push(correctColor);
 
-            while (cores.length < 4) {
-                const cor = coresDisponiveis[Math.floor(Math.random() * coresDisponiveis.length)];
-                if (!cores.includes(cor)) {
-                    cores.push(cor);
+            while (colorsArr.length < 4) {
+                let randomColor = colors[Math.floor(Math.random() * colors.length)];
+                if (!colorsArr.includes(randomColor)) {
+                    colorsArr.push(randomColor);
                 }
             }
 
-            return cores;
-        }
+            return colorsArr;
+        };
 
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
@@ -94,7 +95,7 @@
         })
 
         const randomHTML = () => {
-            const correctColor = coresDisponiveis[Math.floor(Math.random() * coresDisponiveis.length)]
+            const correctColor = colors[Math.floor(Math.random() * colors.length)]
             const [cor1, cor2, cor3, cor4] = cores(correctColor)
             const [nome1, nome2, nome3, nome4] = cores(correctColor)
             let html = `
