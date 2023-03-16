@@ -25,9 +25,9 @@ button {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 5px;
-  grid-row-gap: 30px;
+  grid-row-gap: 35px;
 }
 
 #H1{
-  margin-left: 50%;
+  margin-left: 40%;
 }
