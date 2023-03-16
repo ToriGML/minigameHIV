@@ -233,7 +233,9 @@
 
         const timer = () => {
             if (!game.timerId) {
+                alert(typeof game.time)
                 game.time = +document.getElementById("counter").textContent
+                alert(typeof game.time)
                 game.timerId = setInterval(() => {
                     game.time++
                     document.getElementById("counter").innerText = game.time
