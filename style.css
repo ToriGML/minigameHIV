@@ -21,4 +21,5 @@ button {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  border-radius: 10px;
 }
