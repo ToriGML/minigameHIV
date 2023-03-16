@@ -71,61 +71,61 @@
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.textContent))
+                element.addEventListener('click', resposta(element.value))
             });
         })
         document.getElementById("fase02").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.textContent))
+                element.addEventListener('click', resposta(element.value))
             });
         })
         document.getElementById("fase03").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.textContent))
+                element.addEventListener('click', resposta(element.value))
             });
         })
         document.getElementById("fase04").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase05").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase06").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase07").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase08").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase09").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase10").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', ()=>resposta(element.textContent))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
 
@@ -171,6 +171,7 @@
             const h1 = document.querySelector('#H1');
             console.log(color)
             console.log(h1.textContent)
+            alert(color, h1.textContent)
             if (h1.textContent === color) {
                 alert("Ganhou")
             } else {
