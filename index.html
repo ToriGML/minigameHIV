@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
+
+    </div>
     <a-scene mindar-image="imageTargetSrc: ./pingu.mind" color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
@@ -41,9 +44,7 @@
         </a-entity>
 
     </a-scene>
-    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
-
-    </div>
+    
     <script>
 
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
