@@ -21,7 +21,9 @@
 
 <body>
     <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
-
+        <div id="counter">
+            0
+        </div>
     </div>
     <a-scene mindar-image="imageTargetSrc: ./pingu.mind" color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
@@ -133,6 +135,7 @@
         })
 
         const randomHTML = () => {
+            timer()
             const correctColor = colors[Math.floor(Math.random() * colors.length)]
             const [cor1, cor2, cor3, cor4] = cores(correctColor)
             const [nome1, nome2, nome3, nome4] = cores(correctColor)
@@ -158,9 +161,16 @@
           `
             return html
         }
-        // Separar em um css
-        // Deixar bonito
-        // ** Lógica de jogo
+
+        var id;
+        var time;
+        const timer = () => {
+            time = +document.getElementById("counter").textContent
+            id = setInterval(()=>{
+                time++
+                document.getElementById("counter").innerText = String(time)
+            }, 1000)
+        }
 
         const btns = () => {
             const btn1 = document.getElementById("btn1")
@@ -172,13 +182,11 @@
 
         const resposta = (color) => {
             const h1 = document.querySelector('#H1');
-            console.log(color)
-            console.log(h1.textContent)
-            alert(color, h1.textContent)
             if (h1.textContent === color) {
                 alert("Ganhou")
             } else {
-                alert("Game Over | Loser")
+                clearInterval(id)
+                alert("Game Over\nSeu tempo foi de: " + time)
             }
         }
 
