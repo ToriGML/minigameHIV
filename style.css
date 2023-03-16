@@ -10,7 +10,6 @@ button {
   border: currentColor solid;
   width: 65%;
   margin-left: 15%;
-  margin-bottom: 10%;
   height: 250%;
   color: rgb(71, 71, 71);
   text-transform: capitalize;
@@ -30,7 +29,7 @@ button {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 5px;
-  grid-row-gap: 35px;
+  grid-row-gap: 45px;
 }
 
 .H1{
