@@ -108,16 +108,16 @@
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
                 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-                <button onclick="${()=>alert("Click")}">
+                <button id="btn1">
                     <h1 style="background-color: ${aaa[0]};">${nome1}</h1>
                 </button>
-                <button onclick="resposta(aaa[1])">
+                <button id="btn2">
                     <h1 style="background-color: ${aaa[1]};">${nome2}</h1>
                 </button>
-                <button onclick="resposta(aaa[2])">
+                <button id="btn3">
                     <h1 style="background-color: ${aaa[2]};">${nome3}</h1>
                 </button>
-                <button onclick="resposta(aaa[3])">
+                <button id="btn4">
                     <h1 style="background-color: ${aaa[3]};">${nome4}</h1>
                 </button>
                 </div>
@@ -131,6 +131,13 @@
 
         const resposta = (color) => {
             const h1 = document.querySelector('#H1');
+            const btn1 = document.getElementById("btn1")
+            const btn2 = document.getElementById("btn2")
+            const btn3 = document.getElementById("btn3")
+            const btn4 = document.getElementById("btn4")
+
+            btn1.addEventListener("click", ()=>alert("AaAaAaAa SOCORRO"))
+
             console.log(color)
             console.log(h1.textContent)
             if (h1.textContent === color) {
