@@ -106,7 +106,7 @@
             const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5)
             let html = `
             <div>
-                <h1 style="color: ${cor4};">${correctColor}</h1>
+                <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
                 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
                 <div onclick="${()=>resposta(correctColor)}">
                     <h1 style="background-color: ${aaa[0]};">${nome1}</h1>
@@ -130,7 +130,7 @@
         // ** Lógica de jogo
 
         const resposta = (correctColor) => {
-            const h1 = document.querySelector('h1');
+            const h1 = document.querySelector('#H1');
             console.log(correctColor)
             console.log(h1)
             if (h1.textContent === correctColor) {
