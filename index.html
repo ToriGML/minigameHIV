@@ -198,10 +198,12 @@
         var time;
         const timer = () => {
             time = +document.getElementById("counter").textContent
-            id = setInterval(() => {
-                time++
-                document.getElementById("counter").innerText = String(time)
-            }, 1000)
+            if (!id) {   
+                id = setInterval(() => {
+                    time++
+                    document.getElementById("counter").innerText = String(time)
+                }, 1000)
+            }
         }
 
         const btns = () => {
