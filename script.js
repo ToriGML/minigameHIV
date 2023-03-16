@@ -54,7 +54,7 @@ const randomHTML = () => {
       </div>
       <div id="colors">
       <button id="btn1" style="background-color: ${aaa[0]};" value="${aaa[0]}">
-          ${nome1}
+          ${cor4}
       </button>
       <button id="btn2" style="background-color: ${aaa[1]};" value="${aaa[1]}">
           ${nome2}
