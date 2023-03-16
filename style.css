@@ -12,6 +12,7 @@ button {
   margin-left: 15%;
   height: 250%;
   color: rgb(71, 71, 71);
+  text-transform: capitalize;
 }
 
 #container {
