@@ -10,10 +10,11 @@ button {
   border: currentColor solid;
   width: 65%;
   margin-left: 15%;
+  margin-bottom: 10%;
   height: 250%;
   color: rgb(71, 71, 71);
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
