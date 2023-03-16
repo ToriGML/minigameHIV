@@ -39,12 +39,11 @@
         </a-entity>
         <a-entity mindar-image-target="targetIndex: 9" id="fase10">
         </a-entity>
-        <div id="container"
-            style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
 
-        </div>
     </a-scene>
+    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
 
+    </div>
     <script>
 
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
@@ -126,6 +125,7 @@
         const resposta = (e, correctColor) => {
             const h1 = document.querySelector('h1');
             console.log(e, correctColor)
+            console.log(h1)
             if (h1.textContent === correctColor) {
                 alert("Ganhou")
             } else {
