@@ -70,33 +70,63 @@
 
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase02").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase03").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase04").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase05").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase06").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase07").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase08").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase09").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
         document.getElementById("fase10").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
+            btns().forEach(element => {
+                element.addEventListener('click', resposta(element.textContent))
+            });
         })
 
         const randomHTML = () => {
@@ -108,17 +138,17 @@
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
                 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-                <button id="btn1">
-                    <h1 style="background-color: ${aaa[0]};">${nome1}</h1>
+                <button id="btn1" style="background-color: ${aaa[0]};">
+                    ${nome1}
                 </button>
-                <button id="btn2">
-                    <h1 style="background-color: ${aaa[1]};">${nome2}</h1>
+                <button id="btn2" style="background-color: ${aaa[1]};">
+                    ${nome2}
                 </button>
-                <button id="btn3">
-                    <h1 style="background-color: ${aaa[2]};">${nome3}</h1>
+                <button id="btn3" style="background-color: ${aaa[2]};">
+                    ${nome3}
                 </button>
-                <button id="btn4">
-                    <h1 style="background-color: ${aaa[3]};">${nome4}</h1>
+                <button id="btn4" style="background-color: ${aaa[3]};">
+                    ${nome4}
                 </button>
                 </div>
             </div>
@@ -129,15 +159,16 @@
         // Deixar bonito
         // ** Lógica de jogo
 
-        const resposta = (color) => {
-            const h1 = document.querySelector('#H1');
+        const btns = () => {
             const btn1 = document.getElementById("btn1")
             const btn2 = document.getElementById("btn2")
             const btn3 = document.getElementById("btn3")
             const btn4 = document.getElementById("btn4")
+            return [btn1, btn2, btn3, btn4]
+        }
 
-            btn1.addEventListener("touchstart", ()=>alert("AaAaAaAa SOCORRO"))
-
+        const resposta = (color) => {
+            const h1 = document.querySelector('#H1');
             console.log(color)
             console.log(h1.textContent)
             if (h1.textContent === color) {
