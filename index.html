@@ -231,7 +231,6 @@
             return html
         }
 
-
         const timer = () => {
             if (!game.timerId) {
                 game.time = +document.getElementById("counter").textContent
@@ -254,6 +253,7 @@
             const h1 = document.querySelector('#H1');
             if (h1.textContent === color) {
                 game.score++;
+                document.getElementById('container').innerHTML = ""
                 if (game.score==10) {
                     clearInterval(id)
                     alert("Parabéns, você ganhou o jogo. Sua pontuação foi de: " + game.score + "\nE seu tempo: " + game.time)
