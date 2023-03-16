@@ -78,7 +78,7 @@ const timer = () => {
     if (!isNaN(counterValue)) {
       game.time = counterValue;
       game.timerId = setInterval(() => {
-        game.time--;
+        game.time++;
         counterElement.innerText = game.time;
       }, 1000);
     }
@@ -104,6 +104,7 @@ const resposta = (color) => {
       game.time
       );
     clearInterval(id);
+    location.reload();
   } else {
     game.score++;
     if (game.score == 10) {
