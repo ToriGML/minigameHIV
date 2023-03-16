@@ -71,19 +71,19 @@
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.value))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase02").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.value))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase03").addEventListener("targetFound", (e) => {
             document.getElementById("container").innerHTML = randomHTML()
             btns().forEach(element => {
-                element.addEventListener('click', resposta(element.value))
+                element.addEventListener('click', ()=>resposta(element.value))
             });
         })
         document.getElementById("fase04").addEventListener("targetFound", (e) => {
