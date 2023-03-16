@@ -47,9 +47,23 @@
     </a-scene>
 
     <script>
-        var id;
-        var time;
-        var level = 0;
+        const game = {
+            timerId: null,
+            time: 0,
+            score: 0,
+            levels: {
+                l1: false,
+                l2: false,
+                l3: false,
+                l4: false,
+                l5: false,
+                l6: false,
+                l7: false,
+                l8: false,
+                l9: false,
+                l10: false
+            }
+        }
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
         const cores = (correctColor) => {
@@ -66,106 +80,135 @@
         };
 
         document.getElementById("fase01").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l1) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l1 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase02").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l2) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l2 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase03").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l3) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l3 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase04").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l4) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l4 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase05").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l5) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l5 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase06").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l6) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l6 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase07").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l7) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l7 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase08").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l8) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l8 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase09").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l9) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l9 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
         document.getElementById("fase10").addEventListener("targetFound", (e) => {
-            document.getElementById("container").innerHTML = randomHTML()
-            btns().forEach(element => {
-                element.addEventListener('click', () => {
-                    timer()
-                    resposta(element.value)
-                })
-            });
+            if (!game.levels.l10) {
+                document.getElementById("container").innerHTML = randomHTML()
+                game.levels.l10 = true;
+                btns().forEach(element => {
+                    element.addEventListener('click', () => {
+                        timer()
+                        resposta(element.value)
+                    })
+                });
+            }
         })
 
         const randomHTML = () => {
-
             const correctColor = colors[Math.floor(Math.random() * colors.length)]
             const [cor1, cor2, cor3, cor4] = cores(correctColor)
             const [nome1, nome2, nome3, nome4] = cores(correctColor)
             const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5)
             let html = `
             <div id="counter">
-                ${time ?? 0}
-                ${level}
+                ${game.time}
+                ${game.score}
             </div>
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
@@ -190,11 +233,11 @@
 
 
         const timer = () => {
-            if (!id) {
-                time = +document.getElementById("counter").textContent
-                id = setInterval(() => {
-                    time++
-                    document.getElementById("counter").innerText = String(time)
+            if (!game.timerId) {
+                game.time = +document.getElementById("counter").textContent
+                game.timerId = setInterval(() => {
+                    game.time++
+                    document.getElementById("counter").innerText = String(game.time)
                 }, 1000)
             }
         }
@@ -210,10 +253,14 @@
         const resposta = (color) => {
             const h1 = document.querySelector('#H1');
             if (h1.textContent === color) {
-                level++;
+                game.score++;
+                if (game.score==10) {
+                    clearInterval(id)
+                    alert("Parabéns, você ganhou o jogo. Sua pontuação foi de: " + game.score + "\nE seu tempo: " + game.time)
+                }
             } else {
                 clearInterval(id)
-                alert("Você perdeu, seu pontuação foi: " + level + "\nE seu tempo:" + time)
+                alert("Você perdeu, seu pontuação foi: " + game.score + "\nE seu tempo:" + game.time)
             }
         }
 
