@@ -7,21 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
-    <title>Document</title>
-    <style>
-        body {
-            width: 100%;
-            height: 100vh;
-        }
-
-        button {
-            z-index: 1000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Color Clicker</title>
 </head>
 
 <body>
-    <div id="container" style="position: absolute; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.26);">
+    <div id="container">
 
     </div>
     <a-scene mindar-image="imageTargetSrc: ./pingu.mind" color-space="sRGB"
@@ -58,6 +49,7 @@
     <script>
         var id;
         var time;
+        var level = 0;
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
         const cores = (correctColor) => {
@@ -165,18 +157,19 @@
         })
 
         const randomHTML = () => {
-            
+
             const correctColor = colors[Math.floor(Math.random() * colors.length)]
             const [cor1, cor2, cor3, cor4] = cores(correctColor)
             const [nome1, nome2, nome3, nome4] = cores(correctColor)
             const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5)
             let html = `
             <div id="counter">
-                ${time??0}
+                ${time ?? 0}
+                ${level}
             </div>
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
-                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+                <div id="colors">
                 <button id="btn1" style="background-color: ${aaa[0]};" value="${aaa[0]}">
                     ${nome1}
                 </button>
@@ -195,9 +188,9 @@
             return html
         }
 
-        
+
         const timer = () => {
-            if (!id) {   
+            if (!id) {
                 time = +document.getElementById("counter").textContent
                 id = setInterval(() => {
                     time++
@@ -217,10 +210,10 @@
         const resposta = (color) => {
             const h1 = document.querySelector('#H1');
             if (h1.textContent === color) {
-                alert("Ganhou")
+                level++;
             } else {
                 clearInterval(id)
-                alert("Game Over\nSeu tempo foi de: " + time)
+                alert("Você perdeu, seu pontuação foi: " + level + "\nE seu tempo:" + time)
             }
         }
 
