@@ -39,6 +39,83 @@ const cores = (correctColor) => {
   return colorsArr;
 };
 
+const randomHTML = () => {
+  const correctColor = colors[Math.floor(Math.random() * colors.length)];
+  const [cor1, cor2, cor3, cor4] = cores(correctColor);
+  const [nome1, nome2, nome3, nome4] = cores(correctColor);
+  const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5);
+  let html = `
+  <div id="counter">
+      ${game.score}
+  </div>
+  <div>
+      <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
+      <div id="colors">
+      <button id="btn1" style="background-color: ${aaa[0]};" value="${aaa[0]}">
+          ${nome1}
+      </button>
+      <button id="btn2" style="background-color: ${aaa[1]};" value="${aaa[1]}">
+          ${nome2}
+      </button>
+      <button id="btn3" style="background-color: ${aaa[2]};" value="${aaa[2]}">
+          ${nome3}
+      </button>
+      <button id="btn4" style="background-color: ${aaa[3]};" value="${aaa[3]}">
+          ${nome4}
+      </button>
+      </div>
+  </div>
+`;
+  return html;
+};
+
+const timer = () => {
+  if (!game.timerId) {
+    const counterElement = document.getElementById("counter");
+    const counterValue = parseInt(counterElement.textContent, 10);
+    if (!isNaN(counterValue)) {
+      game.time = counterValue;
+      game.timerId = setInterval(() => {
+        game.time--;
+        counterElement.innerText = game.time;
+      }, 1000);
+    }
+  }
+};
+
+const btns = () => {
+  const btn1 = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+  const btn3 = document.getElementById("btn3");
+  const btn4 = document.getElementById("btn4");
+  return [btn1, btn2, btn3, btn4];
+};
+
+const resposta = (color) => {
+  const h1 = document.querySelector("#H1");
+  document.getElementById("container").innerHTML = "";
+  if (h1.textContent !== color) {
+    alert(
+      "Você perdeu, sua pontuação foi: " +
+      game.score +
+      "\nE seu tempo:" +
+      game.time
+      );
+    clearInterval(id);
+  } else {
+    game.score++;
+    if (game.score == 10) {
+      clearInterval(id);
+      alert(
+        "Parabéns, você ganhou o jogo. Sua pontuação foi de: " +
+          game.score +
+          "\nE seu tempo: " +
+          game.time
+      );
+    }
+  }
+};
+
 document.getElementById("fase01").addEventListener("targetFound", (e) => {
   if (!game.levels.l1) {
     document.getElementById("container").innerHTML = randomHTML();
@@ -159,80 +236,3 @@ document.getElementById("fase10").addEventListener("targetFound", (e) => {
     });
   }
 });
-
-const randomHTML = () => {
-  const correctColor = colors[Math.floor(Math.random() * colors.length)];
-  const [cor1, cor2, cor3, cor4] = cores(correctColor);
-  const [nome1, nome2, nome3, nome4] = cores(correctColor);
-  const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5);
-  let html = `
-  <div id="counter">
-      ${game.score}
-  </div>
-  <div>
-      <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
-      <div id="colors">
-      <button id="btn1" style="background-color: ${aaa[0]};" value="${aaa[0]}">
-          ${nome1}
-      </button>
-      <button id="btn2" style="background-color: ${aaa[1]};" value="${aaa[1]}">
-          ${nome2}
-      </button>
-      <button id="btn3" style="background-color: ${aaa[2]};" value="${aaa[2]}">
-          ${nome3}
-      </button>
-      <button id="btn4" style="background-color: ${aaa[3]};" value="${aaa[3]}">
-          ${nome4}
-      </button>
-      </div>
-  </div>
-`;
-  return html;
-};
-
-const timer = () => {
-  if (!game.timerId) {
-    const counterElement = document.getElementById("counter");
-    const counterValue = parseInt(counterElement.textContent, 10);
-    if (!isNaN(counterValue)) {
-      game.time = counterValue;
-      game.timerId = setInterval(() => {
-        game.time--;
-        counterElement.innerText = game.time;
-      }, 1000);
-    }
-  }
-};
-
-const btns = () => {
-  const btn1 = document.getElementById("btn1");
-  const btn2 = document.getElementById("btn2");
-  const btn3 = document.getElementById("btn3");
-  const btn4 = document.getElementById("btn4");
-  return [btn1, btn2, btn3, btn4];
-};
-
-const resposta = (color) => {
-  const h1 = document.querySelector("#H1");
-  document.getElementById("container").innerHTML = "";
-  if (h1.textContent !== color) {
-    clearInterval(id);
-    alert(
-      "Você perdeu, seu pontuação foi: " +
-        game.score +
-        "\nE seu tempo:" +
-        game.time
-    );
-  } else {
-    game.score++;
-    if (game.score == 10) {
-      clearInterval(id);
-      alert(
-        "Parabéns, você ganhou o jogo. Sua pontuação foi de: " +
-          game.score +
-          "\nE seu tempo: " +
-          game.time
-      );
-    }
-  }
-};
