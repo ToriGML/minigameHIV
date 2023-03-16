@@ -233,13 +233,15 @@
 
         const timer = () => {
             if (!game.timerId) {
-                alert(typeof game.time)
-                game.time = +document.getElementById("counter").textContent
-                alert(typeof game.time)
-                game.timerId = setInterval(() => {
-                    game.time++
-                    document.getElementById("counter").innerText = game.time
-                }, 1000)
+                const counterElement = document.getElementById("counter");
+                const counterValue = parseInt(counterElement.textContent, 10); 
+                if (!isNaN(counterValue)) { 
+                    game.time = counterValue;
+                    game.timerId = setInterval(() => {
+                        game.time++;
+                        counterElement.innerText = game.time;
+                    }, 1000);
+                }
             }
         }
 
@@ -255,7 +257,7 @@
             const h1 = document.querySelector('#H1');
             if (h1.textContent === color) {
                 game.score++;
-                if (game.score==10) {
+                if (game.score == 10) {
                     clearInterval(id)
                     alert("Parabéns, você ganhou o jogo. Sua pontuação foi de: " + game.score + "\nE seu tempo: " + game.time)
                 }
