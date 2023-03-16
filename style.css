@@ -27,3 +27,7 @@ button {
   grid-column-gap: 5px;
   grid-row-gap: 30px;
 }
+
+#H1{
+  margin-left: 50%;
+}
