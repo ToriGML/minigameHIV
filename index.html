@@ -172,7 +172,7 @@
             const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5)
             let html = `
             <div id="counter">
-                ${time}
+                ${time??0}
             </div>
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
