@@ -124,7 +124,7 @@
         // ** Lógica de jogo
 
         const resposta = (e, correctColor) => {
-            const h1 = e.querySelector('h1');
+            const h1 = document.querySelector('h1');
             console.log(e, correctColor)
             if (h1.textContent === correctColor) {
                 alert("Ganhou")
