@@ -236,7 +236,7 @@
                 game.time = +document.getElementById("counter").textContent
                 game.timerId = setInterval(() => {
                     game.time++
-                    document.getElementById("counter").innerText = String(game.time)
+                    document.getElementById("counter").innerText = game.time
                 }, 1000)
             }
         }
@@ -253,7 +253,6 @@
             const h1 = document.querySelector('#H1');
             if (h1.textContent === color) {
                 game.score++;
-                document.getElementById('container').innerHTML = ""
                 if (game.score==10) {
                     clearInterval(id)
                     alert("Parabéns, você ganhou o jogo. Sua pontuação foi de: " + game.score + "\nE seu tempo: " + game.time)
@@ -262,6 +261,7 @@
                 clearInterval(id)
                 alert("Você perdeu, seu pontuação foi: " + game.score + "\nE seu tempo:" + game.time)
             }
+            document.getElementById('container').innerHTML = ""
         }
 
     </script>
