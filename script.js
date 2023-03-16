@@ -103,12 +103,12 @@ const resposta = (color) => {
       "\nE seu tempo:" +
       game.time
       );
-    clearInterval(id);
+    clearInterval(game.timerId);
     location.reload();
   } else {
     game.score++;
     if (game.score == 10) {
-      clearInterval(id);
+      clearInterval(game.timerId);
       alert(
         "Parabéns, você ganhou o jogo. Sua pontuação foi de: " +
           game.score +
