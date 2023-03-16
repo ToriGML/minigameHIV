@@ -28,6 +28,8 @@ button {
   grid-row-gap: 35px;
 }
 
-#H1{
-  margin-left: 41%;
+.H1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

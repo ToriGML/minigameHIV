@@ -49,7 +49,9 @@ const randomHTML = () => {
       ${game.score}
   </div>
   <div>
-      <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
+      <div class="H1">
+        <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
+      </div>
       <div id="colors">
       <button id="btn1" style="background-color: ${aaa[0]};" value="${aaa[0]}">
           ${nome1}
