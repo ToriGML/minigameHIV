@@ -56,7 +56,8 @@
     </a-scene>
 
     <script>
-
+        var id;
+        var time;
         const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', "black", "white"];
 
         const cores = (correctColor) => {
@@ -171,7 +172,7 @@
             const aaa = [cor1, cor2, cor3, correctColor].sort(() => Math.random() - 0.5)
             let html = `
             <div id="counter">
-                0
+                ${time}
             </div>
             <div>
                 <h1 style="color: ${cor4};" id="H1">${correctColor}</h1>
@@ -194,8 +195,7 @@
             return html
         }
 
-        var id;
-        var time;
+        
         const timer = () => {
             if (!id) {   
                 time = +document.getElementById("counter").textContent
