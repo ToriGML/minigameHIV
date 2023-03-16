@@ -197,8 +197,8 @@
         var id;
         var time;
         const timer = () => {
-            time = +document.getElementById("counter").textContent
             if (!id) {   
+                time = +document.getElementById("counter").textContent
                 id = setInterval(() => {
                     time++
                     document.getElementById("counter").innerText = String(time)
